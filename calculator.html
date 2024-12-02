@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="calculator.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        .top-right-navigation {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .top-right-navigation a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #4A90E2;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .top-right-navigation a:hover {
+            background-color: #e0f7fa;
+            color: #0277bd;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 16px;
+            background-color: #1e40af; 
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+   
+    <div class="top-right-navigation">
+        <a href="index.html" class="hover:text-blue-200">Hompage</a>
+        <a href="about.html" class="hover:text-blue-200">About</a>
+        <a href="gallery.html" class="hover:text-blue-200">Gallery</a>
+        <a href="calculator.html" class="hover:text-blue-200">Calculator</a>
+        <a href="register.html" class="hover:text-blue-200">Register</a>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-md w-80">
+        <input 
+            type="text" 
+            id="display" 
+            readonly 
+            class="w-full text-right mb-4 p-2 bg-gray-100 rounded text-2xl"
+        >
+        <div class="grid grid-cols-4 gap-2">
+            <button onclick="clearDisplay()" class="bg-red-500 text-white py-2 rounded">C</button>
+            <button onclick="appendToDisplay('/')" class="bg-blue-500 text-white py-2 rounded">÷</button>
+            <button onclick="appendToDisplay('*')" class="bg-blue-500 text-white py-2 rounded">×</button>
+            <button onclick="deleteLastChar()" class="bg-gray-500 text-white py-2 rounded">⌫</button>
+
+            <button onclick="appendToDisplay('7')" class="bg-gray-200 py-2 rounded">7</button>
+            <button onclick="appendToDisplay('8')" class="bg-gray-200 py-2 rounded">8</button>
+            <button onclick="appendToDisplay('9')" class="bg-gray-200 py-2 rounded">9</button>
+            <button onclick="appendToDisplay('-')" class="bg-blue-500 text-white py-2 rounded">-</button>
+
+            <button onclick="appendToDisplay('4')" class="bg-gray-200 py-2 rounded">4</button>
+            <button onclick="appendToDisplay('5')" class="bg-gray-200 py-2 rounded">5</button>
+            <button onclick="appendToDisplay('6')" class="bg-gray-200 py-2 rounded">6</button>
+            <button onclick="appendToDisplay('+')" class="bg-blue-500 text-white py-2 rounded">+</button>
+
+            <button onclick="appendToDisplay('1')" class="bg-gray-200 py-2 rounded">1</button>
+            <button onclick="appendToDisplay('2')" class="bg-gray-200 py-2 rounded">2</button>
+            <button onclick="appendToDisplay('3')" class="bg-gray-200 py-2 rounded">3</button>
+            <button onclick="calculate()" class="bg-green-500 text-white py-2 row-span-2 rounded">=</button>
+
+            <button onclick="appendToDisplay('0')" class="bg-gray-200 col-span-2 py-2 rounded">0</button>
+            <button onclick="appendToDisplay('.')" class="bg-gray-200 py-2 rounded">.</button>
+        </div>
+    </div>
+    <footer>
+        © 2024 Pieter Waruwu. All Rights Reserved.
+    </footer>
+</body>
+</html>
